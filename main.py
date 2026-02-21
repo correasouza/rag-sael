@@ -32,12 +32,15 @@ os.environ["LANGCHAIN_TRACING_V2"] = os.getenv("LANGCHAIN_TRACING_V2", "true")
 os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")
 os.environ["LANGCHAIN_PROJECT"] = os.getenv("LANGCHAIN_PROJECT", "rag-sael")
 
+# %%
 model = init_chat_model(
     model=os.getenv("OPEN_MODEL", "openai-gpt-oss-120b"),
     model_provider="openai",
     base_url=os.getenv("OPEN_API_URL", "https://inference.do-ai.run/v1")
 )
 
+
+# %%
 embeddings = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2"
 )
